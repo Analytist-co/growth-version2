@@ -103,8 +103,8 @@
   --text-primary: #161616;
   --text-secondary: #525252;
   --text-placeholder: #a8a8a8;
-  --text-on-color: #ffffff;
-  --text-on-color-disabled: #8d8d8d;
+  --text-on-color: #000000;
+  --text-on-color-disabled: #16161640;
   --text-helper: #6f6f6f;
   --text-error: #da1e28;
   --text-inverse: #ffffff;
@@ -116,8 +116,8 @@
   --link-visited: #8a3ffc;
   --icon-primary: #161616;
   --icon-secondary: #525252;
-  --icon-on-color: #ffffff;
-  --icon-on-color-disabled: #8d8d8d;
+  --icon-on-color: #000000;
+  --icon-on-color-disabled: #16161640;
   --icon-interactive: var(--primary-60);
   --icon-inverse: #ffffff;
   --icon-disabled: #16161640;
@@ -886,7 +886,7 @@
   --outline-style: solid;
 }
 :root {
-  --accent01: #4e5e9e;
+  --accent01: #FFD428;
   --accent02: #CE2F27;
   --accent03: #FF9500;
   --accent04: #FFCC00;
@@ -1318,15 +1318,15 @@
 }
 :root,
 :root[accent="01"] {
-  --primary-20: #d0d5e8;
-  --primary-30: #aeb6d7;
-  --primary-40: #8c98c6;
-  --primary-50: #6a79b5;
-  --primary-60: #4e5e9e;
-  --primary-70: #3d4a7c;
-  --primary-80: #2c355a;
-  --primary-90: #1b2138;
-  --primary-100: #0b0d15;
+  --primary-20: #fffdf4;
+  --primary-30: #fff3c1;
+  --primary-40: #ffe88e;
+  --primary-50: #ffde5b;
+  --primary-60: #FFD428;
+  --primary-70: #f4c300;
+  --primary-80: #c19a00;
+  --primary-90: #8e7200;
+  --primary-100: #5b4900;
 }
 :root[reduce-motion="true"] {
   --duration-productive: 0;
@@ -1367,6 +1367,25 @@
 :root[enable-underlines="true"] .accordion-title:hover,
 :root[enable-underlines="true"] td a:not(.label):not([class*="dropdown-"]):not(.dropdown-menu a):hover {
   text-decoration: underline;
+}
+.modal-content > *,
+.tile > *,
+.nav-tabs-contained + .tab-content > *,
+.nav-tabs-contained + form > .tab-content > * {
+  --layer: var(--layer-02);
+  --layer-hover: var(--layer-hover-02);
+  --layer-active: var(--layer-active-02);
+  --layer-selected: var(--layer-selected-02);
+  --layer-selected-hover: var(--layer-selected-hover-02);
+  --layer-accent: var(--layer-accent-02);
+  --layer-accent-hover: var(--layer-accent-hover-02);
+  --layer-accent-active: var(--layer-accent-active-02);
+  --field: var(--field-02);
+  --field-hover: var(--field-hover-02);
+  --border-subtle: var(--border-subtle-02);
+  --border-subtle-selected: var(--border-subtle-selected-02);
+  --border-strong: var(--border-strong-02);
+  --border-tile: var(--border-tile-02);
 }
 .ri-spin {
   -webkit-animation: ri-spin 2s infinite linear;
@@ -1764,7 +1783,7 @@ body > #app-wrapper {
   -o-transition: width 0.3s ease;
   transition: width 0.3s ease;
   width: 230px;
-  background-color: #4e5e9e;
+  background-color: #FFD428;
 }
 .app-sidebar.sidebar-left .sidebar-content {
   padding-right: 1px;
@@ -4608,10 +4627,10 @@ fieldset[disabled] .btn-ghost.btn-icon.focus i {
   color: var(--support-error);
 }
 .alert-primary {
-  background: #aeb6d7;
+  background: #fff3c1;
 }
 .alert-secondary {
-  background: #feedcb;
+  background: #4d4d4d;
 }
 .alert-tertiary {
   background: #a3e2e4;
@@ -9982,7 +10001,7 @@ li.CodeMirror-hint-active {
   margin-bottom: 3px;
 }
 .mautic-editable.over-droppable {
-  border: dashed 2px #4e5e9e;
+  border: dashed 2px #FFD428;
   -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.75);
@@ -10193,7 +10212,7 @@ a.inline-token .text-muted {
 .accordion-heading:focus {
   position: relative;
   z-index: 2;
-  box-shadow: 0 -1px 0 0 var(--focus, #4e5e9e), inset 0 1px 0 0 var(--focus, #4e5e9e), inset 2px 0 0 0 var(--focus, #4e5e9e), 0 1px 0 0 var(--focus, #4e5e9e), inset 0 -1px 0 0 var(--focus, #4e5e9e), inset -2px 0 0 0 var(--focus, #4e5e9e);
+  box-shadow: 0 -1px 0 0 var(--focus, #FFD428), inset 0 1px 0 0 var(--focus, #FFD428), inset 2px 0 0 0 var(--focus, #FFD428), 0 1px 0 0 var(--focus, #FFD428), inset 0 -1px 0 0 var(--focus, #FFD428), inset -2px 0 0 0 var(--focus, #FFD428);
   outline: none;
 }
 .accordion-heading[disabled] {
@@ -10272,7 +10291,7 @@ a.inline-token .text-muted {
 }
 .tile.tile-clickable:focus,
 .tile.tile-selectable:focus {
-  outline-color: var(--focus, #4e5e9e);
+  outline-color: var(--focus, #FFD428);
   outline-offset: -2px;
   text-decoration: none;
 }
@@ -10288,7 +10307,7 @@ a.inline-token .text-muted {
   position: absolute;
   inset-block-start: var(--layout-density-padding-inline-local);
   inset-inline-end: var(--layout-density-padding-inline-local);
-  fill: var(--icon-interactive, #4e5e9e);
+  fill: var(--icon-interactive, #FFD428);
 }
 .tile .tile-icon.tile-disabled,
 .tile .tile-icon:disabled {
@@ -10615,7 +10634,7 @@ code:hover > .copy-icon {
   height: 48px;
 }
 .mautic-brand > svg.mautic-logo-figure .circle {
-  fill: #4e5e9e;
+  fill: #FFD428;
 }
 .mautic-brand > svg.mautic-logo-figure .m,
 .mautic-brand > svg.mautic-logo-figure .m-arrow {
@@ -10631,7 +10650,7 @@ code:hover > .copy-icon {
 .mautic-brand > svg.mautic-logo-text .t,
 .mautic-brand > svg.mautic-logo-text .i,
 .mautic-brand > svg.mautic-logo-text .c {
-  fill: #4e5e9e;
+  fill: #FFD428;
 }
 @media (max-width: 768px) {
   svg.mautic-logo-text {
