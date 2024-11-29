@@ -172,7 +172,10 @@ class FormAuthenticator extends AbstractFormLoginAuthenticator implements Passwo
 
         // If integrations fail due to redirect to dashboard look into
         // how to detect if that's a proper form auth and return null if request must continue w/o redirect
-        return new RedirectResponse($this->urlGenerator->generate('mautic_dashboard_index'));
+
+        // GROWTH: replace dashboard with powerbi bundle
+        return new RedirectResponse($this->urlGenerator->generate('mautic_powerbi_index'));
+        // return new RedirectResponse($this->urlGenerator->generate('mautic_dashboard_index'));
     }
 
     protected function getLoginUrl(): string

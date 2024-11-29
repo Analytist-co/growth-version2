@@ -57,7 +57,9 @@ class InstallController extends CommonController
         // We're going to assume a bit here; if the config file exists already and DB info is provided, assume the app
         // is installed and redirect
         if ($this->installer->checkIfInstalled()) {
-            return $this->redirectToRoute('mautic_dashboard_index');
+            // GROWTH: replace dashboard with powerbi bundle
+            return $this->redirectToRoute('mautic_powerbi_index');
+            // return $this->redirectToRoute('mautic_dashboard_index');
         }
 
         if ($index - floor($index) > 0) {
@@ -188,7 +190,9 @@ class InstallController extends CommonController
                 return $this->postActionRedirect(
                     [
                         'viewParameters'    => [
-                            'welcome_url' => $this->generateUrl('mautic_dashboard_index'),
+                            // GROWTH: replace dashboard with powerbi bundle
+                            'welcome_url' => $this->generateUrl('mautic_powerbi_index'),
+                            // 'welcome_url' => $this->generateUrl('mautic_dashboard_index'),
                             'parameters'  => $this->configurator->render(),
                             'version'     => MAUTIC_VERSION,
                             'tmpl'        => $tmpl,
@@ -247,7 +251,9 @@ class InstallController extends CommonController
             if (!$session->has('mautic.installer.completedsteps')) {
                 // Arrived here by directly browsing to URL so redirect to the dashboard
 
-                return $this->redirectToRoute('mautic_dashboard_index');
+                // GROWTH: replace dashboard with powerbi bundle
+                return $this->redirectToRoute('mautic_powerbi_index');
+                // return $this->redirectToRoute('mautic_dashboard_index');
             }
         } else {
             // Shouldn't have made it to this step without having a successful install
@@ -260,7 +266,9 @@ class InstallController extends CommonController
 
         $this->installer->finalMigrationStep();
 
-        $welcomeUrl = $this->generateUrl('mautic_dashboard_index');
+        // GROWTH: replace dashboard with powerbi bundle
+        $welcomeUrl = $this->generateUrl('mautic_powerbi_index');
+        // $welcomeUrl = $this->generateUrl('mautic_dashboard_index');
 
         $tmpl = $request->isXmlHttpRequest() ? $request->get('tmpl', 'index') : 'index';
 

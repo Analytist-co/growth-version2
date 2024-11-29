@@ -566,6 +566,6 @@ class DashboardController extends AbstractFormController
      */
     public function redirectToDashboardAction()
     {
-        return $this->redirect($this->generateUrl('mautic_dashboard_index'));
+        return $this->redirect($this->generateUrl('mautic_powerbi_index'));
     }
 }

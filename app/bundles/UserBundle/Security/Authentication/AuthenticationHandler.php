@@ -36,7 +36,9 @@ class AuthenticationHandler implements AuthenticationSuccessHandlerInterface, Au
 
             return $response;
         } else {
-            $redirectUrl = $request->getSession()->get('_security.main.target_path', $this->router->generate('mautic_dashboard_index'));
+            // GROWTH: replace dashboard with powerbi bundle
+            $redirectUrl = $request->getSession()->get('_security.main.target_path', $this->router->generate('mautic_powerbi_index'));
+            // $redirectUrl = $request->getSession()->get('_security.main.target_path', $this->router->generate('mautic_dashboard_index'));
 
             return new RedirectResponse($redirectUrl);
         }

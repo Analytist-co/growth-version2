@@ -443,7 +443,9 @@ class UserController extends FormController
         // user not found
         if (null === $user) {
             return $this->postActionRedirect([
-                'returnUrl'       => $this->generateUrl('mautic_dashboard_index'),
+                // GROWTH: replace dashboard with powerbi bundle
+                'returnUrl'       => $this->generateUrl('mautic_powerbi_index'),
+                // 'returnUrl'       => $this->generateUrl('mautic_dashboard_index'),
                 'contentTemplate' => 'Mautic\UserBundle\Controller\UserController::contactAction',
                 'flashes'         => [
                     [
@@ -463,7 +465,9 @@ class UserController extends FormController
         if ('POST' === $request->getMethod()) {
             $contact   = $request->request->get('contact') ?? [];
             $formUrl   = $contact['returnUrl'] ?? '';
-            $returnUrl = $formUrl ? urldecode($formUrl) : $this->generateUrl('mautic_dashboard_index');
+            // GROWTH: replace dashboard with powerbi bundle
+            $returnUrl = $formUrl ? urldecode($formUrl) : $this->generateUrl('mautic_powerbi_index');
+            // $returnUrl = $formUrl ? urldecode($formUrl) : $this->generateUrl('mautic_dashboard_index');
             $valid     = false;
 
             if (!$cancelled = $this->isFormCancelled($form)) {
@@ -517,7 +521,9 @@ class UserController extends FormController
         } else {
             $reEntityId = (int) $request->get('id');
             $reSubject  = InputHelper::clean($request->get('subject'));
-            $returnUrl  = InputHelper::clean($request->get('returnUrl', $this->generateUrl('mautic_dashboard_index')));
+            // GROWTH: replace dashboard with powerbi bundle
+            $returnUrl  = InputHelper::clean($request->get('returnUrl', $this->generateUrl('mautic_powerbi_index')));
+            // $returnUrl  = InputHelper::clean($request->get('returnUrl', $this->generateUrl('mautic_dashboard_index')));
             $reEntity   = InputHelper::clean($request->get('entity'));
 
             $form->get('entity')->setData($reEntity);

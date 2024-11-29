@@ -34,7 +34,9 @@ class SecurityController extends CommonController implements EventSubscriberInte
         if ($authChecker->isGranted('IS_AUTHENTICATED_FULLY')
             || $authChecker->isGranted('IS_AUTHENTICATED_REMEMBERED')
         ) {
-            $redirectUrl = $this->generateUrl('mautic_dashboard_index');
+            // GROWTH: replace dashboard with powerbi bundle
+            $redirectUrl = $this->generateUrl('mautic_powerbi_index');
+            // $redirectUrl = $this->generateUrl('mautic_dashboard_index');
             $event->setResponse(new RedirectResponse($redirectUrl));
         }
     }

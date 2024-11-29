@@ -19,7 +19,9 @@ class DefaultController extends CommonController
         $root = $this->coreParametersHelper->get('webroot');
 
         if (empty($root)) {
-            return $this->redirectToRoute('mautic_dashboard_index');
+            // GROWTH: replace dashboard with powerbi bundle
+            return $this->redirectToRoute('mautic_powerbi_index');
+        // return $this->redirectToRoute('mautic_dashboard_index');
         } else {
             /** @var \Mautic\PageBundle\Model\PageModel $pageModel */
             $pageModel = $this->getModel('page');

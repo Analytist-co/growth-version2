@@ -313,7 +313,9 @@ var Mautic = {
      */
     bindGlobalKeyboardShortcuts: function () {
         Mautic.addKeyboardShortcut('g d', 'Load the Dashboard', function (e) {
-            mQuery('#mautic_dashboard_index').click();
+            // GROWTH: replace dashboard with powerbi bundle
+            mQuery('#mautic_powerbi_index').click();
+            // mQuery('#mautic_dashboard_index').click();
         });
 
         Mautic.addKeyboardShortcut('g c', 'Load Contacts', function (e) {

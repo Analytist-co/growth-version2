@@ -97,9 +97,15 @@ class InstallControllerTest extends \PHPUnit\Framework\TestCase
                 true
             );
 
+        // $this->routerMock->expects($this->once())
+        //     ->method('generate')
+        //     ->with('mautic_dashboard_index', [], UrlGeneratorInterface::ABSOLUTE_PATH)
+        //     ->willReturn('http://localhost/');
+
+        // GROWTH: replace dashboard with powerbi bundle
         $this->routerMock->expects($this->once())
             ->method('generate')
-            ->with('mautic_dashboard_index', [], UrlGeneratorInterface::ABSOLUTE_PATH)
+            ->with('mautic_powerbi_index', [], UrlGeneratorInterface::ABSOLUTE_PATH)
             ->willReturn('http://localhost/');
 
         $response = $this->controller->stepAction(
