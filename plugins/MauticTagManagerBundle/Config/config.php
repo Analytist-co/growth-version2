@@ -15,9 +15,11 @@ return [
                 'path'       => '/tags/batch/set',
                 'controller' => 'MauticPlugin\MauticTagManagerBundle\Controller\BatchTagController::execAction',
             ],
+            // GROWTH: add redirect route to dashboard
             'mautic_tagmanager_index' => [
                 'path'       => '/tags/{page}',
-                'controller' => 'MauticPlugin\MauticTagManagerBundle\Controller\TagController::indexAction',
+                // 'controller' => 'MauticPlugin\MauticTagManagerBundle\Controller\TagController::indexAction',
+                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
             ],
             'mautic_tagmanager_action' => [
                 'path'       => '/tags/{objectAction}/{objectId}',
@@ -52,13 +54,14 @@ return [
     ],
     'menu' => [
         'main' => [
-            'tagmanager.menu.index' => [
-                'id'        => 'mautic_tagmanager_index',
-                'route'     => 'mautic_tagmanager_index',
-                'access'    => 'tagManager:tagManager:view',
-                'iconClass' => 'ri-hashtag',
-                'priority'  => 1,
-            ],
+            // GROWTH: disable tags menu
+            // 'tagmanager.menu.index' => [
+            //     'id'        => 'mautic_tagmanager_index',
+            //     'route'     => 'mautic_tagmanager_index',
+            //     'access'    => 'tagManager:tagManager:view',
+            //     'iconClass' => 'ri-hashtag',
+            //     'priority'  => 1,
+            // ],
         ],
     ],
 ];

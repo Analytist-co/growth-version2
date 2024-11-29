@@ -110,9 +110,11 @@ return [
                 'path'       => '/contacts/{objectAction}/{objectId}',
                 'controller' => 'Mautic\LeadBundle\Controller\LeadController::executeAction',
             ],
+            // GROWTH: add redirect route to dashboard
             'mautic_company_index' => [
                 'path'       => '/companies/{page}',
-                'controller' => 'Mautic\LeadBundle\Controller\CompanyController::indexAction',
+                // 'controller' => 'Mautic\LeadBundle\Controller\CompanyController::indexAction',
+                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
             ],
             'mautic_company_contacts_list' => [
                 'path'         => '/company/{objectId}/contacts/{page}',
@@ -290,12 +292,12 @@ return [
                     'route'     => 'mautic_contact_index',
                     'priority'  => 80,
                 ],
-                'mautic.companies.menu.index' => [
-                    'route'     => 'mautic_company_index',
-                    'iconClass' => 'ri-building-2-fill',
-                    'access'    => ['lead:leads:viewother'],
-                    'priority'  => 75,
-                ],
+                // 'mautic.companies.menu.index' => [
+                //     'route'     => 'mautic_company_index',
+                //     'iconClass' => 'ri-building-2-fill',
+                //     'access'    => ['lead:leads:viewother'],
+                //     'priority'  => 75,
+                // ],
                 'mautic.lead.list.menu.index' => [
                     'iconClass' => 'ri-pie-chart-fill',
                     'access'    => ['lead:lists:viewown', 'lead:lists:viewother'],
