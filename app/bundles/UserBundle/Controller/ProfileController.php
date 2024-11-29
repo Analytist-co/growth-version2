@@ -213,7 +213,9 @@ class ProfileController extends FormController
                     );
                 }
             } else {
-                return $this->redirectToRoute('mautic_dashboard_index');
+                // GROWTH: replace dashboard with powerbi bundle
+                return $this->redirectToRoute('mautic_powerbi_index');
+                // return $this->redirectToRoute('mautic_dashboard_index');
             }
         }
         $request->getSession()->set('formProcessed', 0);

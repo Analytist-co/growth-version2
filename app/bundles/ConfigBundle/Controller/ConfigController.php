@@ -156,7 +156,9 @@ class ConfigController extends FormController
 
                     return $this->delegateRedirect($this->generateUrl('mautic_config_action', $redirectParameters));
                 } else {
-                    return $this->delegateRedirect($this->generateUrl('mautic_dashboard_index'));
+                    // GROWTH: replace dashboard with powerbi bundle
+                    return $this->delegateRedirect($this->generateUrl('mautic_powerbi_index'));
+                    // return $this->delegateRedirect($this->generateUrl('mautic_dashboard_index'));
                 }
             }
         }

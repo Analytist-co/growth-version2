@@ -208,11 +208,13 @@ class CommonController extends AbstractController implements MauticController
     }
 
     /**
-     * Redirects /s and /s/ to /s/dashboard.
+     * Redirects /s and /s/ to /s/powerbi.
      */
     public function redirectSecureRootAction()
     {
-        return $this->redirectToRoute('mautic_dashboard_index', [], 301);
+        // GROWTH: replace dashboard with powerbi bundle
+        return $this->redirectToRoute($this->generateUrl('mautic_powerbi_index'), 301);
+        // return $this->redirectToRoute('mautic_dashboard_index', [], 301);
     }
 
     /**
@@ -226,7 +228,8 @@ class CommonController extends AbstractController implements MauticController
     {
         $request = $this->getCurrentRequest();
 
-        $returnUrl = array_key_exists('returnUrl', $args) ? $args['returnUrl'] : $this->generateUrl('mautic_dashboard_index');
+        // GROWTH: replace dashboard with powerbi bundle
+        $returnUrl = array_key_exists('returnUrl', $args) ? $args['returnUrl'] : $this->generateUrl('mautic_powerbi_index'); // $this->generateUrl('mautic_dashboard_index');
         $flashes   = array_key_exists('flashes', $args) ? $args['flashes'] : [];
 
         // forward the controller by default

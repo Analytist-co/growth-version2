@@ -27,7 +27,9 @@ abstract class AbstractFormController extends CommonController
             }
             $returnUrl = urldecode($request->get('returnUrl'));
             if (empty($returnUrl)) {
-                $returnUrl = $this->generateUrl('mautic_dashboard_index');
+                // GROWTH: replace dashboard with powerbi bundle
+                $returnUrl = $this->generateUrl('mautic_powerbi_index');
+                // $returnUrl = $this->generateUrl('mautic_dashboard_index');
             }
 
             $this->addFlashMessage(

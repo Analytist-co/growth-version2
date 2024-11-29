@@ -560,12 +560,4 @@ class DashboardController extends AbstractFormController
     {
         return $request->get('name', (new \DateTime())->format('Y-m-dTH:i:s'));
     }
-
-    /**
-     * Redirects to the dashboard.
-     */
-    public function redirectToDashboardAction()
-    {
-        return $this->redirect($this->generateUrl('mautic_dashboard_index'));
-    }
 }

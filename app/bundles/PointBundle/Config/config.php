@@ -11,7 +11,7 @@ return [
             'mautic_pointtrigger_index' => [
                 'path'       => '/points/triggers/{page}',
                 // 'controller' => 'Mautic\PointBundle\Controller\TriggerController::indexAction',
-                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
+                'controller' => 'Mautic\PowerBiBundle\Controller\DefaultController::redirectToReportAction',
             ],
             'mautic_pointtrigger_action' => [
                 'path'       => '/points/triggers/{objectAction}/{objectId}',
