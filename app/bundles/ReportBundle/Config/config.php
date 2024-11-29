@@ -7,7 +7,7 @@ return [
             'mautic_report_index' => [
                 'path'       => '/reports/{page}',
                 // 'controller' => 'Mautic\ReportBundle\Controller\ReportController::indexAction',
-                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
+                'controller' => 'Mautic\PowerBiBundle\Controller\DefaultController::redirectToReportAction',
             ],
             'mautic_report_export' => [
                 'path'       => '/reports/view/{objectId}/export/{format}',

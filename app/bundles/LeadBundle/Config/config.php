@@ -114,7 +114,7 @@ return [
             'mautic_company_index' => [
                 'path'       => '/companies/{page}',
                 // 'controller' => 'Mautic\LeadBundle\Controller\CompanyController::indexAction',
-                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
+                'controller' => 'Mautic\PowerBiBundle\Controller\DefaultController::redirectToReportAction',
             ],
             'mautic_company_contacts_list' => [
                 'path'         => '/company/{objectId}/contacts/{page}',

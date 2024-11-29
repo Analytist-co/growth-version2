@@ -7,7 +7,7 @@ return [
             'mautic_stage_index' => [
                 'path'       => '/stages/{page}',
                 // 'controller' => 'Mautic\StageBundle\Controller\StageController::indexAction',
-                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
+                'controller' => 'Mautic\PowerBiBundle\Controller\DefaultController::redirectToReportAction',
             ],
             'mautic_stage_action' => [
                 'path'       => '/stages/{objectAction}/{objectId}',

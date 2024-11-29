@@ -17,20 +17,28 @@ class DefaultController extends AbstractFormController
      */
     public function indexAction()
     {
-        // return new JsonResponse(['success' => true]);
-
         return $this->delegateView([
             'viewParameters'  => [],
             'contentTemplate' => '@MauticPowerBi/Default/index.html.twig',
-            'passthroughVars' => [
-                // 'activeLink'    => '#mautic_powerbi_index',
-                // 'mauticContent' => 'powerbi',
-                // 'route'         => $this->generateUrl('mautic_powerbi_index'),
-            ],
-            // 'passthroughVars' => [
-            //     'mauticContent' => 'powerbi',
-            //     'route'         => $this->generateUrl('mautic_powerbi_index'),
-            // ],
+            'passthroughVars' => [],
         ]);
+    }
+
+    /**
+     * Health Check Path.
+     *
+     * @return JsonResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    public function healthCheckAction()
+    {
+        return new JsonResponse(['success' => true]);
+    }
+
+    /**
+     * Redirects to the Growth Reports.
+     */
+    public function redirectToReportAction()
+    {
+        return $this->redirect($this->generateUrl('mautic_powerbi_index'));
     }
 }

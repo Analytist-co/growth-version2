@@ -19,7 +19,7 @@ return [
             'mautic_tagmanager_index' => [
                 'path'       => '/tags/{page}',
                 // 'controller' => 'MauticPlugin\MauticTagManagerBundle\Controller\TagController::indexAction',
-                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
+                'controller' => 'Mautic\PowerBiBundle\Controller\DefaultController::redirectToReportAction',
             ],
             'mautic_tagmanager_action' => [
                 'path'       => '/tags/{objectAction}/{objectId}',
