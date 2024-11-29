@@ -7,9 +7,11 @@ return [
                 'path'       => '/points/triggers/events/{objectAction}/{objectId}',
                 'controller' => 'Mautic\PointBundle\Controller\TriggerEventController::executeAction',
             ],
+            // GROWTH: add redirect route to dashboard
             'mautic_pointtrigger_index' => [
                 'path'       => '/points/triggers/{page}',
-                'controller' => 'Mautic\PointBundle\Controller\TriggerController::indexAction',
+                // 'controller' => 'Mautic\PointBundle\Controller\TriggerController::indexAction',
+                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
             ],
             'mautic_pointtrigger_action' => [
                 'path'       => '/points/triggers/{objectAction}/{objectId}',
@@ -87,26 +89,27 @@ return [
 
     'menu' => [
         'main' => [
-            'mautic.points.menu.root' => [
-                'id'        => 'mautic_points_root',
-                'iconClass' => 'ri-coins-fill',
-                'access'    => ['point:points:view', 'point:triggers:view', 'point:groups:view'],
-                'priority'  => 30,
-                'children'  => [
-                    'mautic.point.menu.index' => [
-                        'route'  => 'mautic_point_index',
-                        'access' => 'point:points:view',
-                    ],
-                    'mautic.point.trigger.menu.index' => [
-                        'route'  => 'mautic_pointtrigger_index',
-                        'access' => 'point:triggers:view',
-                    ],
-                    'mautic.point.group.menu.index' => [
-                        'route'  => 'mautic_point.group_index',
-                        'access' => 'point:groups:view',
-                    ],
-                ],
-            ],
+            // GROWTH: disable point menu
+            // 'mautic.points.menu.root' => [
+            //     'id'        => 'mautic_points_root',
+            //     'iconClass' => 'ri-coins-fill',
+            //     'access'    => ['point:points:view', 'point:triggers:view', 'point:groups:view'],
+            //     'priority'  => 30,
+            //     'children'  => [
+            //         'mautic.point.menu.index' => [
+            //             'route'  => 'mautic_point_index',
+            //             'access' => 'point:points:view',
+            //         ],
+            //         'mautic.point.trigger.menu.index' => [
+            //             'route'  => 'mautic_pointtrigger_index',
+            //             'access' => 'point:triggers:view',
+            //         ],
+            //         'mautic.point.group.menu.index' => [
+            //             'route'  => 'mautic_point.group_index',
+            //             'access' => 'point:groups:view',
+            //         ],
+            //     ],
+            // ],
         ],
     ],
 

@@ -3,9 +3,11 @@
 return [
     'routes' => [
         'main' => [
+            // GROWTH: add redirect route to dashboard
             'mautic_report_index' => [
                 'path'       => '/reports/{page}',
-                'controller' => 'Mautic\ReportBundle\Controller\ReportController::indexAction',
+                // 'controller' => 'Mautic\ReportBundle\Controller\ReportController::indexAction',
+                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
             ],
             'mautic_report_export' => [
                 'path'       => '/reports/view/{objectId}/export/{format}',
@@ -62,15 +64,16 @@ return [
 
     'menu' => [
         'main' => [
-            'mautic.report.reports' => [
-                'route'     => 'mautic_report_index',
-                'iconClass' => 'ri-file-chart-2-fill',
-                'access'    => [
-                    'report:reports:viewown',
-                    'report:reports:viewother',
-                ],
-                'priority' => 20,
-            ],
+            // GROWTH: disable report menu
+            // 'mautic.report.reports' => [
+            //     'route'     => 'mautic_report_index',
+            //     'iconClass' => 'ri-file-chart-2-fill',
+            //     'access'    => [
+            //         'report:reports:viewown',
+            //         'report:reports:viewother',
+            //     ],
+            //     'priority' => 20,
+            // ],
         ],
     ],
 

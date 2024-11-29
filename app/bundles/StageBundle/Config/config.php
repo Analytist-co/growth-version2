@@ -3,9 +3,11 @@
 return [
     'routes' => [
         'main' => [
+            // GROWTH: add redirect route to dashboard
             'mautic_stage_index' => [
                 'path'       => '/stages/{page}',
-                'controller' => 'Mautic\StageBundle\Controller\StageController::indexAction',
+                // 'controller' => 'Mautic\StageBundle\Controller\StageController::indexAction',
+                'controller' => 'Mautic\DashboardBundle\Controller\DashboardController::redirectToDashboardAction',
             ],
             'mautic_stage_action' => [
                 'path'       => '/stages/{objectAction}/{objectId}',
@@ -34,12 +36,13 @@ return [
 
     'menu' => [
         'main' => [
-            'mautic.stages.menu.index' => [
-                'route'     => 'mautic_stage_index',
-                'iconClass' => 'ri-barricade-fill flip-vertically',
-                'access'    => ['stage:stages:view'],
-                'priority'  => 25,
-            ],
+            // GROWTH: disable stag menu
+            // 'mautic.stages.menu.index' => [
+            //     'route'     => 'mautic_stage_index',
+            //     'iconClass' => 'ri-barricade-fill flip-vertically',
+            //     'access'    => ['stage:stages:view'],
+            //     'priority'  => 25,
+            // ],
         ],
     ],
 
